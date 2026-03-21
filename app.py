@@ -63,5 +63,9 @@ def handle_video_frame(data):
 def index():
     return render_template('index.html')
 
+@app.route('/index', endpoint='video_feed')
+def video_feed():
+    return "Not implemented for SocketIO server", 404
+
 if __name__ == '__main__':
-    socketio.run(app, host='192.168.137.1', port=5000, debug=True)
+    socketio.run(app, host='0.0.0.0', port=5000, debug=True)
